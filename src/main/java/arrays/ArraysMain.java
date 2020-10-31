@@ -31,11 +31,24 @@ public class ArraysMain {
         System.out.println(Arrays.deepToString(szorzoTabla));
     }
 
+    static void sameTempValues(double[] day, double[] anotherDay) {
+        boolean day1Day2 = Arrays.equals(day, anotherDay);
+
+        System.out.println("Az egyik és a másik nap mérései " + (day1Day2 ? "megegyeznek." : "nem egyeznek meg."));
+    }
+
     public static void main(String[] args) {
         System.out.println(numberOfDaysAsString());
 
         System.out.println(daysOfWeek());
 
         multiplicationTableAsString(5);
+
+        double [] day1 = {1.2, 2.5, 2.4, 3.8, 1.9, 4.2, 3.3, 2.9, 2.2, 4.6, 5.0, 4.4};
+        double [] day2 = {1.2, 2.5, 2.4, 3.8, 1.9, 4.2, 3.3, 2.9, 2.2, 4.6, 5.0, 4.4};
+        double [] day3 = {2.2, 2.5, 2.4, 3.8, 1.9, 4.2, 3.3, 2.9, 2.2, 4.6, 5.0, 4.4};
+
+        sameTempValues(day1, day2);
+        sameTempValues(day2, day3);
     }
 }
