@@ -18,7 +18,14 @@ public class ArrayOfArraysMain {
     private static void printArrayOfArrays(int[][] a) {
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
-                System.out.print(a[i][j] + " ");
+                if (a[i][j] < 10){
+                    System.out.print("    " + a[i][j]);
+                } else if (a[i][j] < 100){
+                    System.out.print("   " + a[i][j]);
+                } else if (a[i][j] < 1000){
+                    System.out.print("  " + a[i][j]);
+                }
+
             }
             System.out.println();
         }
