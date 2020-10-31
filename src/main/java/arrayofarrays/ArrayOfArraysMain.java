@@ -1,5 +1,7 @@
 package arrayofarrays;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Scanner;
 
 public class ArrayOfArraysMain {
@@ -33,6 +35,18 @@ public class ArrayOfArraysMain {
         return triangMatrix;
     }
 
+    private static int[][] getValues() {
+        int [][] honapok = new int [12][];
+        for (int i = 0; i < honapok.length; i++) {
+            int days = (LocalDate.of(2019, i + 1, 1)).lengthOfMonth();
+            honapok[i] = new int[days];
+            for (int j = 0; j < days; j++) {
+                honapok[i][j] = j;
+            }
+        }
+        return honapok;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -41,5 +55,8 @@ public class ArrayOfArraysMain {
 
         System.out.println("A háromszögmátrix mérete:");
         printArrayOfArrays(triangularMatrix(scanner.nextInt()));
+
+        System.out.println("A hónapok napjai sorrendben januártól, nem szökőévben:");
+        printArrayOfArrays(getValues());
     }
 }
