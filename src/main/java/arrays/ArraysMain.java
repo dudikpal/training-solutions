@@ -37,6 +37,18 @@ public class ArraysMain {
         System.out.println("Az egyik és a másik nap mérései " + (day1Day2 ? "megegyeznek." : "nem egyeznek meg."));
     }
 
+    static boolean wonLottery(int[]megtett, int[]kihuzott) {
+        int [] megtettClone = megtett.clone();
+        int [] kihuzottClone = kihuzott.clone();
+        Arrays.sort(megtettClone);
+        Arrays.sort(kihuzottClone);
+        if (megtettClone.equals(kihuzottClone)) {
+            return true;
+        }
+         return false;
+
+    }
+
     public static void main(String[] args) {
         System.out.println(numberOfDaysAsString());
 
@@ -50,5 +62,13 @@ public class ArraysMain {
 
         sameTempValues(day1, day2);
         sameTempValues(day2, day3);
+
+        int [] megtett = {3, 2, 1}, kihuzott = {1, 2, 3};
+        System.out.println(Arrays.toString(megtett));
+        System.out.println(Arrays.toString(kihuzott));
+        System.out.println("A két tömb számai " +(wonLottery(megtett, kihuzott) ? "megegyeznek!"
+ : "Nem egyeznek meg."));
+        System.out.println(Arrays.toString(megtett));
+        System.out.println(Arrays.toString(kihuzott));
     }
 }
