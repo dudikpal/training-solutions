@@ -32,9 +32,9 @@ public class ArraysMain {
     }
 
     static void sameTempValues(double[] day, double[] anotherDay) {
-        boolean day1Day2 = Arrays.equals(day, anotherDay);
+        boolean daysEqual = Arrays.equals(day, anotherDay);
 
-        System.out.println("Az egyik és a másik nap mérései " + (day1Day2 ? "megegyeznek." : "nem egyeznek meg."));
+        System.out.println("Az egyik és a másik nap mérései " + (daysEqual ? "megegyeznek." : "nem egyeznek meg."));
     }
 
     static boolean wonLottery(int[]megtett, int[]kihuzott) {
