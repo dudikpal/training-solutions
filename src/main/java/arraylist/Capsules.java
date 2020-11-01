@@ -35,6 +35,16 @@ public class Capsules {
         System.out.println(capsules.getColors());
         capsules.addLast("utolsó");
         System.out.println(capsules.getColors());
+
+        /*
+        // 1. bónusz feladat
+        List<String> bonus1 = capsules.getColors();
+        System.out.println(bonus1);
+        bonus1.clear();
+        System.out.println(bonus1);
+        // a capsules lista is üres lesz így!!!
+        */
+
         capsules.removeFirst();
         System.out.println(capsules.getColors());
         capsules.removeLast();

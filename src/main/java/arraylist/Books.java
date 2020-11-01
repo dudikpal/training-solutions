@@ -22,6 +22,10 @@ public class Books {
         return resultList;
     }
 
+    void removeByPrefix(String prefix) {
+        titles.removeAll(findAllByPrefix(prefix));
+    }
+
     List<String> getTitles() {
         List<String> allTitles = new ArrayList<>();
         for (String item: titles) {
@@ -44,6 +48,10 @@ public class Books {
 
         System.out.println(books.findAllByPrefix("Az"));
         System.out.println(books.findAllByPrefix("Mindenk"));
-        //System.out.println(books.getTitles().get(0).substring(0, 4));
+
+        //2. bónusz feladat
+        System.out.println(books.getTitles());
+        books.removeByPrefix("Ég");
+        System.out.println(books.getTitles());
     }
 }
