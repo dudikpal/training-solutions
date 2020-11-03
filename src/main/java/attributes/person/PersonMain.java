@@ -12,6 +12,10 @@ public class PersonMain {
         System.out.println(address1.addressToString());
         person1.moveTo(address1);
         System.out.println(person1.personToString());
+
+        // itt megpróbáltam a personToString()-be belecsempészni az address-t, de nem sikerült stringelnem az Addressben levő addressToString()-el
+        // Van erre vmi mód?
+
         System.out.println(person1.getAddress().addressToString());
 
         person1.correctData("Másikjános", "XX2222");
