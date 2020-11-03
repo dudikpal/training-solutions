@@ -33,4 +33,13 @@ public class Restaurant {
     public int getCapacity() {
         return capacity;
     }
+
+    @Override
+    public String toString() {
+        return "Restaurant{" +
+                "name='" + name + '\'' +
+                ", capacity=" + capacity +
+                ", menu= " + menu +
+                '}';
+    }
 }

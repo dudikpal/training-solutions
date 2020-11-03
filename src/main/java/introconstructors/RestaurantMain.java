@@ -8,5 +8,8 @@ public class RestaurantMain {
         System.out.println("Étterem neve: " + resti.getName());
         System.out.println("Éttermi kapacitás: " + resti.getCapacity());
         System.out.println("Aktuális kínálatunk: " + resti.getMenu());
+
+        // kipróbáltam a legenerált toString()-et
+        System.out.println(resti.toString());
     }
 }
