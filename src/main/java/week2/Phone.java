@@ -33,7 +33,7 @@ public class Phone {
         System.out.println("Kérem a telefon típusát:");
         String phoneType = sc.nextLine();
         System.out.println("A telefon memóriája:");
-        String phoneMem = sc.nextLine();
+        int phoneMem = sc.nextInt();
 
         Phone phone1 = new Phone("Motolora", 3);
         Phone phone2 = new Phone("Nikoa", 2);
