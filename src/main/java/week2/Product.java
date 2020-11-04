@@ -19,6 +19,7 @@ public class Product {
     }
 
     public boolean areTheyEqual(Product p) {
+        // nem jó!!! equal() kell, mint ahogy eddig is
         return p.name == name && Math.max(p.code.length(), code.length()) - Math.min(p.code.length(), code.length()) < 2 ? true : false;
     }
 
