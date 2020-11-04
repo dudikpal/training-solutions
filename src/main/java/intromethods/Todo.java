@@ -21,4 +21,8 @@ public class Todo {
     public void finish() {
         finished = true;
     }
+
+    public String toString() {
+        return "Név: " + caption + " (" + (isFinished() ? "finished" : "not finish") + ")" + "\n";
+    }
 }

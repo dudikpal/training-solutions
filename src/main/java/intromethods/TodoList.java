@@ -48,4 +48,8 @@ public class TodoList {
         }
         return finishedTodos;
     }
+
+    public String toString() {
+        return todos.toString();
+    }
 }

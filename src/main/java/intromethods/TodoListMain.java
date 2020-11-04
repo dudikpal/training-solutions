@@ -25,6 +25,8 @@ public class TodoListMain {
         System.out.println("Finished: " + todoList.numberOfFinishedTodos());
         System.out.println("Not yet finish: " + todoList.todosToFinish());
 
+        System.out.println(todoList.toString());
+
 
     }
 
