@@ -24,4 +24,16 @@ public class Member {
     public void connectMember(Member member) {
         connections.add(member);
     }
+
+    public String toString() {
+        return name + " kapcsolatai: " + connectedNames() ;
+    }
+
+    public List<String> connectedNames() {
+        List<String> result = new ArrayList<>();
+        for (Member member: connections) {
+            result.add(member.getName());
+        }
+        return result;
+    }
 }

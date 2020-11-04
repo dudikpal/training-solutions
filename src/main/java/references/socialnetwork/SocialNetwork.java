@@ -46,4 +46,8 @@ public class SocialNetwork {
         return null;
     }
 
+    public String toString() {
+        return members.toString();
+    }
+
 }
