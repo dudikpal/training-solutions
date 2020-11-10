@@ -6,10 +6,18 @@ public class Patient {
     private String socialSecurityNumber;
     private int yearOfBirth;
 
-    public Patient(String name, String socialSecurityNumber, int yearOfBirth) {
+    public Patient(String name, String ssn, int year) {
         this.name = name;
-        this.socialSecurityNumber = socialSecurityNumber;
-        this.yearOfBirth = yearOfBirth;
+        this.socialSecurityNumber = ssn;
+        this.yearOfBirth = year;
+
+        if (name.equals(null)) {
+            throw new IllegalArgumentException();
+        }
+
+        if (year < 1900) {
+            throw new IllegalArgumentException();
+        }
     }
 
     public String getName() {
@@ -23,4 +31,6 @@ public class Patient {
     public int getYearOfBirth() {
         return yearOfBirth;
     }
+
+
 }
