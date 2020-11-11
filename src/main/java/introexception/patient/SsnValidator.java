@@ -15,9 +15,9 @@ public class SsnValidator {
         int sum = 0;
         for (int i = 0; i < ssn.length() - 1; i++) {
             if (i % 2 == 0) {
-                sum += (int)ssn.charAt(i);
+                sum += (int)ssn.charAt(i) * 3;
             } else {
-                sum += (int)ssn.charAt(i);
+                sum += (int)ssn.charAt(i) * 7;
             }
         }
 
@@ -40,9 +40,9 @@ public class SsnValidator {
 
             for (int j = 0; j < ssn.length() - 1; j++) {
                 if (j % 2 == 0) {
-                    sum += sum += (int)ssn.charAt(i) * 3;
+                    sum += (int)ssn.charAt(j) * 3;
                 } else {
-                    sum += sum += (int)ssn.charAt(i) * 7;
+                    sum += (int)ssn.charAt(j) * 7;
                 }
             }
 
