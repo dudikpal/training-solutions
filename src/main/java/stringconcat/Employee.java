@@ -15,10 +15,13 @@ public class Employee {
 
     public void parametersValidator() {
         if (getName() == null || getName().equals("") || getName().equals(" ")) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Name must not be empty.");
         }
-        if (getSalary() < 0 && getSalary() % 1000 != 0) {
-            throw new IllegalArgumentException();
+        if (getSalary() < 0 || getSalary() % 1000 != 0) {
+            throw new IllegalArgumentException("Salary must be positive.");
+        }
+        if (getJob() == null || getJob().equals("") || getJob().equals(" ")) {
+            throw new IllegalArgumentException("Job must not be empty.");
         }
     }
 
