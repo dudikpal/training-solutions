@@ -2,20 +2,6 @@ package stringbuilder;
 
 public class NameBuilder {
 
-    /*private Title title;
-    private String familyName;
-    private String middleName;
-    private String givenName;
-
-    public NameBuilder(Title title, String familyName, String middleName, String givenName) {
-
-        this.title = title;
-
-        this.familyName = isEmptyFamilyOrGivenName(familyName);
-        this.middleName = middleName;
-        this.givenName = isEmptyFamilyOrGivenName(givenName);
-    }*/
-
     public String concatNameWesternStyle(String familyName, String middleName, String givenName, Title title) {
         isEmptyFamilyOrGivenName(familyName);
         isEmptyFamilyOrGivenName(givenName);
@@ -51,6 +37,7 @@ public class NameBuilder {
 
         return sb.toString();
     }
+
     public String insertTitle(String name, Title title, String where) {
         StringBuilder sb = new StringBuilder(name);
         int index = sb.indexOf(where);
