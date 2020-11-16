@@ -41,4 +41,8 @@ public class Transaction {
     public TransactionStatus getStatus() {
         return status;
     }
+
+    public void setStatus(TransactionStatus status) {
+        this.status = status;
+    }
 }
