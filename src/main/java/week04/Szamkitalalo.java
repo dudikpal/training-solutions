@@ -22,10 +22,11 @@ public class Szamkitalalo {
                 szamlalo++;
             } else {
                 System.out.println("Gratulálok! Sikerült eltalálnod!");
+                szamlalo = 10;
                 break;
             }
         }
-        if (szamlalo > 0) {
+        if (szamlalo == 10) {
             System.out.println("Sajnos kifogytál a lehatőségekből, nem találtad el...");
         }
     }
