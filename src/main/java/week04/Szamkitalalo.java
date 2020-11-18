@@ -13,20 +13,19 @@ public class Szamkitalalo {
         int szamlalo = 0;
         System.out.println("Gondoltam egy számra 1 és 100 között. Mi a tipped?");
 
-        while (szamlalo < 6) {
+        while (szamlalo < 7) {
             int tipp = Integer.parseInt(scanner.nextLine());
+            szamlalo++;
             if (gondoltSzam > tipp) {
                 System.out.println("A tippednél nagyobbra gondoltam.");
-                szamlalo++;
             } else if (gondoltSzam < tipp) {
                 System.out.println("A tippednél kisebbre gondoltam.");
-                szamlalo++;
             } else {
                 System.out.println("Gratulálok! Sikerült eltalálnod!");
-                szamlalo = 6;
+                szamlalo = 7;
             }
         }
-        if (szamlalo == 6) {
+        if (szamlalo == 7) {
             System.out.println("Sajnos kifogytál a lehatőségekből, nem találtad el...");
         }
     }
