@@ -25,5 +25,8 @@ public class Szamkitalalo {
                 break;
             }
         }
+        if (szamlalo > 0) {
+            System.out.println("Sajnos kifogytál a lehatőségekből, nem találtad el...");
+        }
     }
 }
