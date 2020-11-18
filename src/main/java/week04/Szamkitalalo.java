@@ -1,5 +1,6 @@
 package week04;
 
+import javax.swing.plaf.IconUIResource;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,7 +11,6 @@ public class Szamkitalalo {
         Random rnd = new Random();
         int gondoltSzam = rnd.nextInt(100) + 1;
         int szamlalo = 0;
-        boolean eltalalt = false;
         System.out.println("Gondoltam egy számra 1 és 100 között. Mi a tipped?");
 
         while (szamlalo < 6) {
@@ -23,11 +23,10 @@ public class Szamkitalalo {
                 szamlalo++;
             } else {
                 System.out.println("Gratulálok! Sikerült eltalálnod!");
-                eltalalt = true;
-                break;
+                szamlalo = 6;
             }
         }
-        if (!eltalalt) {
+        if (szamlalo == 6) {
             System.out.println("Sajnos kifogytál a lehatőségekből, nem találtad el...");
         }
     }
