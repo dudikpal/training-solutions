@@ -8,8 +8,9 @@ public class Szamkitalalo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random rnd = new Random();
-        int gondoltSzam = rnd.nextInt(100);
+        int gondoltSzam = rnd.nextInt(100) + 1;
         int szamlalo = 0;
+        boolean eltalalt = false;
         System.out.println("Gondoltam egy számra 1 és 100 között. Mi a tipped?");
 
         while (szamlalo < 6) {
@@ -22,11 +23,11 @@ public class Szamkitalalo {
                 szamlalo++;
             } else {
                 System.out.println("Gratulálok! Sikerült eltalálnod!");
-                szamlalo = 10;
+                eltalalt = true;
                 break;
             }
         }
-        if (szamlalo != 10) {
+        if (!eltalalt) {
             System.out.println("Sajnos kifogytál a lehatőségekből, nem találtad el...");
         }
     }
