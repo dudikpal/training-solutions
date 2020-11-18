@@ -26,7 +26,7 @@ public class Szamkitalalo {
                 break;
             }
         }
-        if (szamlalo == 10) {
+        if (szamlalo != 10) {
             System.out.println("Sajnos kifogytál a lehatőségekből, nem találtad el...");
         }
     }
