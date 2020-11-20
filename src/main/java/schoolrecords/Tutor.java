@@ -7,13 +7,11 @@ import java.util.List;
 public class Tutor {
 
     private String name;
-    //private List<Subject> taughtSubject = new ArrayList<>();
     private List<Subject> taughtSubject;
 
     public Tutor(String name, List<Subject> taughtSubject) {
         //try {
             isEmpty(name);
-
         /*} catch (IllegalArgumentException iae) {
             System.out.println("Tutor creating failed!");
         }*/

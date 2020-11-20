@@ -9,17 +9,17 @@ public class Mark {
     private Tutor tutor;
 
     public Mark(MarkType markType, Subject subject, Tutor tutor) {
+        isEmpty(subject, tutor);
         this.markType = markType;
         this.subject = subject;
         this.tutor = tutor;
-        isEmpty();
     }
 
     public Mark(String markType, Subject subject, Tutor tutor) {
+        isEmpty(subject, tutor);
         this.markType = markTypeStringOrNumber(markType);
         this.subject = subject;
         this.tutor = tutor;
-        isEmpty();
     }
 
     private MarkType markTypeStringOrNumber(String markType) {
@@ -29,7 +29,7 @@ public class Mark {
                     return mark;
                 }
             } else {
-                if (mark.getValue() == Integer.parseInt(markType)) {
+                if (!markType.isBlank() && mark.getValue() == Integer.parseInt(markType)) {
                     return mark;
                 }
             }
@@ -37,7 +37,7 @@ public class Mark {
         return null;
     }
 
-    private void isEmpty() {
+    private void isEmpty(Subject subject, Tutor tutor) {
         if (subject == null || tutor == null) {
             throw new NullPointerException("Both subject and tutor must be provided!");
         }
