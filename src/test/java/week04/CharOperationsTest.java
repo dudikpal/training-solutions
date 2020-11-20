@@ -10,13 +10,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CharOperationsTest {
 
     @Test
-    void TsetCharOperations() {
+    void TestCharOperations() {
         CharOperations charOperations = new CharOperations();
 
         String base = "alma";
         String part = "a";
+        List<Integer> result = new ArrayList<>(){{add(0);add(3);}};
 
-        assertEquals(new ArrayList<>(){{add(0);add(3);}}, charOperations.getPositionOfChar(base, part));    }
+        assertEquals(result, charOperations.getPositionOfChar(base, part));}
 
 
 }
