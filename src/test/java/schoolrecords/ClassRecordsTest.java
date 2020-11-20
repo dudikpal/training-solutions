@@ -88,6 +88,7 @@ public class ClassRecordsTest {
         assertEquals("No marks present, average calculation aborted!", ex.getMessage());
     }
 
+
     @Test
     public void testCalculateClassAverage() {
         assertEquals(3.33, classRecords.calculateClassAverage());

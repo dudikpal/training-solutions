@@ -7,7 +7,8 @@ import java.util.List;
 public class Tutor {
 
     private String name;
-    private List<Subject> taughtSubject = new ArrayList<>();
+    //private List<Subject> taughtSubject = new ArrayList<>();
+    private List<Subject> taughtSubject;
 
     public Tutor(String name, List<Subject> taughtSubject) {
         //try {
@@ -20,11 +21,8 @@ public class Tutor {
         this.taughtSubject = taughtSubject;
     }
 
-    public static void main(String[] args) {
-        Subject subject = new Subject("matek");
-        Tutor tutor = new Tutor("", Arrays.asList(subject));
-        System.out.println(tutor);
-        System.out.println("Vége");
+    public List<Subject> getTaughtSubject() {
+        return taughtSubject;
     }
 
     public boolean tutorTeachingSubject(Subject subject) {
@@ -44,6 +42,15 @@ public class Tutor {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Tutor name must not be empty!");
         }
+    }
+
+    public String toString() {
+        System.out.println("Tanár neve: " + name);
+        System.out.println("Tanított tárgyai: ");
+        for (Subject subject: taughtSubject) {
+            System.out.println(subject.getSubjectName());
+        }
+        return "";
     }
 
 }

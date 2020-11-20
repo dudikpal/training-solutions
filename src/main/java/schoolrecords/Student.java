@@ -27,11 +27,11 @@ public class Student {
     }
 
     public double calculateAverage() {
-        double sumMarks = 0;
+        double sumMarks = 0.0;
         for (Mark mark: marks) {
             sumMarks += mark.getMarkType().getValue();
         }
-        return (double)Math.round(sumMarks / marks.size() * 100) / 100;
+        return (double)Math.round((sumMarks / marks.size()) * 100) / 100;
     }
 
     public void grading(Mark mark) {
@@ -42,10 +42,13 @@ public class Student {
     }
 
     public String toString() {
-        Mark mark = marks.get(0);
-        return name + " marks: " + mark.getSubject().getSubjectName() +
-                ": " + mark.getMarkType().getDescription() +
-                "(" + mark.getMarkType().getValue() + ")";
+        String studentMarks= name + " Marks: \n";
+        for (Mark mark: marks) {
+            studentMarks += mark.getSubject().getSubjectName() +
+                    ": " + mark.getMarkType().getDescription() +
+                    "(" + mark.getMarkType().getValue() + ") from " + mark.getTutor().getName() + "\n";
+        }
+        return studentMarks;
     }
 
     private void isEmpty(String str) {

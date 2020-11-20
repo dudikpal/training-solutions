@@ -3,25 +3,33 @@ package schoolrecords;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class ClassRecords {
     private String className;
-    private Random rnd;
+    private Random rnd = new Random();
     private List<Student> students = new ArrayList<>();
 
-    public ClassRecords(String className, Random rnd) {
+    public ClassRecords(String className, List<Student> students) {
         this.className = className;
-        this.rnd = rnd;
+        this.students = students;
     }
 
     public boolean removeStudent(Student student) {
         for (Student item: students) {
             if (item.getName().equals(student.getName())) {
+                System.out.println(student.getName() + " sikeresen törölve a naplóból.");
                 students.remove(student);
                 return true;
             }
         }
+        System.out.println("Nincs " + " nevű diák az osztályban!");
         return false;
+    }
+    // ez csak a teszthez kell
+    public ClassRecords(String className, Random rnd) {
+        this.className = className;
+        this.rnd = rnd;
     }
 
     public boolean addStudent(Student student) {
@@ -82,7 +90,7 @@ public class ClassRecords {
         if (students.size() == 0) {
             throw new IllegalStateException("No students to select for repetition!");
         }
-        return students.get(rnd.nextInt(3));
+        return students.get(rnd.nextInt(students.size()));
     }
 
     public List<StudyResultByName> listStudyResults() {
