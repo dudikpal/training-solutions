@@ -9,31 +9,15 @@ public class SchoolRecordsController {
     private List<Student> students = new ArrayList<>();
     private ClassRecords classRecords;
 
-    /*public SchoolRecordsController(List<Subject> subjects, List<Tutor> tutors, List<Student> students) {
-        this.subjects = subjects;
-        this.tutors = tutors;
-        this.students = students;
-    }*/
-
     public static void main(String[] args) {
-
 
         SchoolRecordsController src = new SchoolRecordsController();
         src.classRecords = new ClassRecords("Class 1", src.students);
 
         src.initSchool();
 
-        /*System.out.println(src.tutors.get(0).getName());
-        System.out.println(src.tutors.get(0).getTaughtSubject().get(0).getSubjectName());
-        System.out.println(src.tutors.get(0).getTaughtSubject().get(1).getSubjectName());*/
-
         Scanner scanner = new Scanner(System.in);
         Random rnd = new Random();
-
-        /*src.classRecords.addStudent(new Student("Hatodik Alajos"));
-        src.classRecords.removeStudent(src.classRecords.findStudentByName());
-        System.out.println(src.classRecords.listStudentNames());
-        System.out.println(src.classRecords.findStudentByName());*/
 
         int choosedMenu = 0;
         while (choosedMenu != 11) {
@@ -45,6 +29,7 @@ public class SchoolRecordsController {
 
     public void choosedMenuMethods(int menuPoint) {
         Scanner scanner = new Scanner(System.in);
+
         switch (menuPoint) {
             case 1:
                 System.out.println("\nAz alábbi diákok járnak az osztályba:");
@@ -57,14 +42,7 @@ public class SchoolRecordsController {
                 break;
 
             case 3:
-                System.out.println("\nKérem az új diák nevét:");
-                String name = inputName();
-                if (classRecords.addStudent(new Student(name))) {
-                    classRecords.addStudent(new Student(name));
-                    System.out.println(name + " sikeresen hozzáadva a naplóhoz.");
-                } else {
-                    System.out.println("Ilyen nevű diák már van a naplóban!");
-                }
+                case3();
                 break;
 
             case 4:
@@ -73,34 +51,14 @@ public class SchoolRecordsController {
                 break;
 
             case 5:
-                System.out.println("\"Ahol kinyílik a napló\" feleltetés eredménye:");
-                Random rnd = new Random();
-                Tutor tutor = tutors.get(rnd.nextInt(tutors.size()));
-                Subject subject = tutor.getTaughtSubject().get(rnd.nextInt(tutor.getTaughtSubject().size()));
-                String givenMark = String.valueOf(rnd.nextInt(MarkType.values().length) + 1);
-                Student studentToRepetition = classRecords.repetition();
-                Mark mark = new Mark(givenMark, subject, tutor);
-                studentToRepetition.grading(mark);
-                System.out.println("Felelő neve: " + studentToRepetition.getName() +
-                        "\nFeleltető tanár: " + tutor.getName() +
-                        "\nTantárgy: " + subject.getSubjectName() +
-                        "\nOsztályzat: " + mark.toString());
+                case5();
                 break;
 
             case 6:
-                // csak 1 tizedesig írja
                 System.out.println(classRecords.calculateClassAverage());
                 break;
             case 7:
-                System.out.println("Melyik tantárgy osztályátlagára kíváncsi?");
-                String subjectName = scanner.nextLine();
-                for (Subject item: subjects) {
-                    if (item.getSubjectName().equals(subjectName)) {
-                        System.out.println("Az osztály átlaga " +
-                                item.getSubjectName() + " tárgyból: " +
-                                classRecords.calculateClassAverageBySubject(item));
-                    }
-                }
+                case7();
                 break;
             case 8:
                 System.out.println("A diákok átlaga:");
@@ -111,33 +69,85 @@ public class SchoolRecordsController {
                 break;
             case 9:
                 System.out.println("Kérem adja meg pontosan a diák nevét:");
-                Student studentMarksAverage = classRecords.findStudentByName(scanner.nextLine());
+                Student studentMarksAverage = classRecords.findStudentByName(inputName());
                 System.out.println(studentMarksAverage.getName() +
                         "\nOsztályzatainak átlaga: " + studentMarksAverage.calculateAverage());
                 break;
             case 10:
-                System.out.println("Kérem adja meg pontosan a diák nevét:");
-                Student studentSubjectAverage = classRecords.findStudentByName(scanner.nextLine());
-                System.out.println("Kis helper a jó lekérdezéshez:\n" + classRecords.findStudentByName(studentSubjectAverage.getName()));
-                System.out.println("Melyik tantárgy átlagára kíváncsi?");
-                String subjectToAverage = scanner.nextLine();
-                for (Subject item: subjects) {
-                    if (item.getSubjectName().equals(subjectToAverage)) {
-                        System.out.println(item.getSubjectName() +
-                            ": " + studentSubjectAverage.calculateSubjectAverage(item));
-                    }
-                }
+                case10();
                 break;
             case 11:
                 System.out.println("Köszönjük, hogy használta világszínvonalú rendszerünket!");
                 break;
             case 12:
-                for (Student student: students) {
-                    System.out.println(student);
-                }
+                case12();
                 break;
+
             default:
                 System.out.println("Kérjük 1 és 12 közötti számot írjon be!");
+        }
+    }
+
+    private void case3() {
+        System.out.println("\nKérem az új diák nevét:");
+        String name = inputName();
+        if (classRecords.addStudent(new Student(name))) {
+            classRecords.addStudent(new Student(name));
+            System.out.println(name + " sikeresen hozzáadva a naplóhoz.");
+        } else {
+            System.out.println("Ilyen nevű diák már van a naplóban!");
+        }
+    }
+
+    private void case5() {
+        Random rnd = new Random();
+        System.out.println("\"Ahol kinyílik a napló\" feleltetés eredménye:");
+        Tutor tutor = tutors.get(rnd.nextInt(tutors.size()));
+        Subject subject = tutor.getTaughtSubject().get(rnd.nextInt(tutor.getTaughtSubject().size()));
+        String givenMark = String.valueOf(rnd.nextInt(MarkType.values().length) + 1);
+        Student studentToRepetition = classRecords.repetition();
+        Mark mark = new Mark(givenMark, subject, tutor);
+        studentToRepetition.grading(mark);
+        System.out.println("Felelő neve: " + studentToRepetition.getName() +
+                "\nFeleltető tanár: " + tutor.getName() +
+                "\nTantárgy: " + subject.getSubjectName() +
+                "\nOsztályzat: " + mark.toString());
+    }
+
+    private void case7() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Melyik tantárgy osztályátlagára kíváncsi?");
+        String subjectName = scanner.nextLine();
+        for (Subject item: subjects) {
+            if (item.getSubjectName().equals(subjectName)) {
+                System.out.println("Az osztály átlaga " +
+                        item.getSubjectName() + " tárgyból: " +
+                        classRecords.calculateClassAverageBySubject(item));
+            }
+        }
+    }
+
+    private void case10() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Kérem adja meg pontosan a diák nevét:");
+        Student studentSubjectAverage = classRecords.findStudentByName(inputName());
+        System.out.println("Kis helper a jó lekérdezéshez:\n" + classRecords.findStudentByName(studentSubjectAverage.getName()));
+        System.out.println("Melyik tantárgy átlagára kíváncsi?");
+        String subjectToAverage = scanner.nextLine();
+        for (Subject item: subjects) {
+            if (item.getSubjectName().equals(subjectToAverage)) {
+                System.out.println(item.getSubjectName() +
+                        ": " + studentSubjectAverage.calculateSubjectAverage(item));
+            }
+        }
+    }
+
+    private void case12() {
+        for (Tutor item: tutors) {
+            System.out.println(item);
+        }
+        for (Student student: students) {
+            System.out.println(student);
         }
     }
 
@@ -177,12 +187,6 @@ public class SchoolRecordsController {
         classRecords.addStudent(new Student("Negyedik Eufrozina"));
         classRecords.addStudent(new Student("Ötödik Taksony"));
 
-        /*students.add(new Student("Első Márton"));
-        students.add(new Student("Mássodhik Kicsién"));
-        students.add(new Student("Harmadik Gyula"));
-        students.add(new Student("Negyedik Eufrozina"));
-        students.add(new Student("Ötödik Taksony"));*/
-
         // tanárok létrehozása a tanított tantárgyaikkal
         tutors.add(new Tutor("Tanár Néni", new ArrayList<>(){
             {
@@ -203,14 +207,14 @@ public class SchoolRecordsController {
             }
         }));
 
-
         Random rnd = new Random();
         // tanulók feltöltése osztályzatokkal
         for (Student student: students) {
+            // mennyi osztályzatot akarunk adni diákonként
             int marksPerStudent = 5;
             for (int i = 0; i < marksPerStudent; i++) {
                 String markType = String.valueOf(rnd.nextInt(5) + 1);
-                Subject subject = subjects.get(rnd.nextInt(6));
+                Subject subject = subjects.get(rnd.nextInt(subjects.size()));
                 Tutor tutor = null;
                 // subjecthez való tanár kikeresése
                 for (Tutor item: tutors) {
