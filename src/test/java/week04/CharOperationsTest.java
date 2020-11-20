@@ -14,9 +14,9 @@ public class CharOperationsTest {
         CharOperations charOperations = new CharOperations();
 
         String base = "alma";
+        String part = "a";
 
-        assertEquals(new ArrayList<>(){{add(0);add(3);}}, charOperations.getPositionOfChar("alma", "a"));
-    }
+        assertEquals(new ArrayList<>(){{add(0);add(3);}}, charOperations.getPositionOfChar(base, part));    }
 
 
 }
