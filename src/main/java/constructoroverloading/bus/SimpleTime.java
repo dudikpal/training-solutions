@@ -10,13 +10,12 @@ public class SimpleTime {
     }
 
     public SimpleTime(int hours, int minutes) {
-        this.hours = hours;
+        this(hours);
         this.minutes = minutes;
     }
 
     public SimpleTime(SimpleTime time) {
-        hours = time.getHours();
-        minutes = time.getMinutes();
+        this(time.getHours(), time.getMinutes());
     }
 
     public int difference(SimpleTime time) {
