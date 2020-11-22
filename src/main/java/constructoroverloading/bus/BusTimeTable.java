@@ -15,6 +15,11 @@ public class BusTimeTable {
         this.timeTable = timeTable;
     }
 
+    public SimpleTime firstBusOfTheDay() {
+        System.out.println(nextBus(new SimpleTime(0, 0)));
+        return nextBus(new SimpleTime(0, 0));
+    }
+
     private void createTimeTable(int firstHour, int lastHour, int everyMinute) {
         for (int i = firstHour; i <= lastHour; i++) {
             timeTable.add(new SimpleTime(i, everyMinute));

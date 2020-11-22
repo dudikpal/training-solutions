@@ -49,6 +49,14 @@ public class BusTimeTableTest {
     }
 
     @Test
+    public void testFirstBus() {
+        //Given
+        BusTimeTable timetable = new BusTimeTable(TIME_TABLE);
+        // When
+        assertEquals("9:15", timetable.firstBusOfTheDay().toString());
+    }
+
+    @Test
     public void nextBusShouldThrowExceptionIfNone() throws IllegalStateException {
         BusTimeTable timetable = new BusTimeTable(TIME_TABLE);
 
