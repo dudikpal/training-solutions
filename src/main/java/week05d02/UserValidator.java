@@ -5,14 +5,11 @@ import java.util.List;
 
 public class UserValidator {
 
-    private List<User> users = new ArrayList<>();
-
     public void validate(List<User> users) {
         for (User user: users) {
             isStringEmpty(user.getName());
             isAgeValid(user.getAge());
         }
-
     }
 
     private void isStringEmpty(String str) {
@@ -25,9 +22,5 @@ public class UserValidator {
         if (0 > age || age > 120) {
             throw new IllegalArgumentException("Age must not be positive number, and less than 120 year!");
         }
-    }
-
-    public List<User> getUsers() {
-        return users;
     }
 }
