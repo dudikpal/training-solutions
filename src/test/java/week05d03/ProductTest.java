@@ -12,7 +12,7 @@ public class ProductTest {
         Product product = new Product(300, Currency.USD);
 
         Currency currency = Currency.HUF;
-        assertEquals(1, product.convertPrice(currency));
+        assertEquals(90000, product.convertPrice(currency));
     }
 
     @Test
@@ -20,7 +20,7 @@ public class ProductTest {
         Product product = new Product(300, Currency.HUF);
 
         Currency currency = Currency.USD;
-        assertEquals(90000, product.convertPrice(currency));
+        assertEquals(1, product.convertPrice(currency));
 
     }
 }

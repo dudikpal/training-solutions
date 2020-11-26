@@ -13,10 +13,10 @@ public class Product {
 
     public double convertPrice(Currency currency) {
         if (currency == Currency.HUF) {
-            return price / currency.getRate();
+            return price * currency.HUF.getRate();
         }
         if (currency == Currency.USD) {
-            return price * currency.HUF.getRate();
+            return price / currency.getRate();
         }
         return 0;
     }
