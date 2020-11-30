@@ -5,13 +5,13 @@ import java.util.List;
 public class SeparatedSum {
 
     public SumOfNumbers sum(String s) {
-        List<String> numberStrings = List.of(s.split(";"));
+        String numberWithDot = s.replace(",", ".");
+        List<String> numberStrings = List.of(numberWithDot.split(";"));
         double sumOfPositives = 0;
         double sumOfNegatives = 0;
 
         for (String str: numberStrings) {
-            String numberWithDot = str.replace(",", ".");
-            double number = Double.parseDouble(numberWithDot);
+            double number = Double.parseDouble(str);
             if (number < 0) {
                 sumOfNegatives += number;
             } else {
