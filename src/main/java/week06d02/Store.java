@@ -13,17 +13,32 @@ public class Store {
         this.products = products;
     }
 
-    public Dictionary getProductsByCategory() {
-        Hashtable piecesOfCategory = new Hashtable();
+    public List<PiecesFromCategory> getProductsByCategory() {
+
+        List<PiecesFromCategory> result = new ArrayList<>();
         for (Product product: products) {
-            if (piecesOfCategory.containsKey(product.getCategory())) {
-                int counter = Integer.parseInt(piecesOfCategory.get(product.getCategory()).toString()) + 1;
-                piecesOfCategory.put(product.getCategory(), counter);
-            } else {
-                piecesOfCategory.put(product.getCategory(), 1);
+            boolean newCategory = true;
+            for (PiecesFromCategory resultItem: result) {
+                if (resultItem.getCategory() == product.getCategory()) {
+                    resultItem.increasePieces();
+                    newCategory = false;
+                }
+            }
+            if (newCategory) {
+                result.add(new PiecesFromCategory(product.getCategory(), 1));
+                newCategory = true;
             }
         }
-        return piecesOfCategory;
+        return result;
+    }
+
+
+    public String toStringOfResult() {
+        String result = "";
+        for (PiecesFromCategory item: getProductsByCategory()) {
+            result += item.getCategory() + ": " + item.getPieces() + "\n";
+        }
+        return result;
     }
 
 

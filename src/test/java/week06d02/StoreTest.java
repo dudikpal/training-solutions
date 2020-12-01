@@ -18,10 +18,9 @@ class StoreTest {
 
         Store store = new Store(products);
 
-        assertEquals(1, store.getProductsByCategory().get(Category.BAKEDGOODS));
-        assertEquals(1, store.getProductsByCategory().get(Category.DAIRY));
-        assertEquals(3, store.getProductsByCategory().get(Category.FROZEN));
-        assertEquals(null, store.getProductsByCategory().get(Category.OTHER));
+        assertEquals("[{FROZEN: 3}, {BAKEDGOODS: 1}, {DAIRY: 1}]", store.getProductsByCategory().toString());
+
+        System.out.println(store.toStringOfResult());
     }
 
 }
