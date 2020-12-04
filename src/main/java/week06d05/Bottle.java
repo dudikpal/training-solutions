@@ -7,7 +7,7 @@ public class Bottle {
 
     public Bottle(BottleType type) {
         this.type = type;
-        filledUntil = 0;
+        //filledUntil = 0;
     }
 
     public static Bottle of(BottleType bottleType) {
