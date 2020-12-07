@@ -3,6 +3,7 @@ package week07d01;
 public class Fibonacci {
 
     private long sum = 0;
+    private static final Long[] RESULTS = new Long[2000];
 
     public long fib(int n) {
         if (n == 0) {
@@ -11,6 +12,9 @@ public class Fibonacci {
         if (n < 3) {
             return 1;
         }
-        return fib(n - 1) + fib(n - 2);
+        if(RESULTS[n] == null) {
+            RESULTS[n] = fib(n - 1) + fib(n - 2);
+        }
+        return RESULTS[n];
     }
 }
