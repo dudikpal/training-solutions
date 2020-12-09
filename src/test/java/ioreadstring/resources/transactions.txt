@@ -1,0 +1,6 @@
+[InternetShortcut]
+URL=https://github.com/Training360/strukturavalto-java-public/blob/master/solutions/ioreadstring/src/test/resources/transactions.txt
+IDList=
+HotKey=0
+IconFile=C:\Users\pali\AppData\Local\Mozilla\Firefox\Profiles\dcja6ue8.default\shortcutCache\fnS1EB3htJfz3CTSkr49TQ==.ico
+IconIndex=0
