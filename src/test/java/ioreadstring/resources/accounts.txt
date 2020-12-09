@@ -1,6 +1,5 @@
-[InternetShortcut]
-URL=https://github.com/Training360/strukturavalto-java-public/blob/master/solutions/ioreadstring/src/test/resources/accounts.txt
-IDList=
-HotKey=0
-IconFile=C:\Users\pali\AppData\Local\Mozilla\Firefox\Profiles\dcja6ue8.default\shortcutCache\EJAkbb8KYeGgjIstIojJ+w==.ico
-IconIndex=0
+John Doe;12345-12345-2323-2222;1200000
+Jane Doe;12345-12345-2323-2221;234050200
+Julie Doe;12345-12345-2323-2225;1312000
+Jack Doe;12345-12345-2323-2228;720010
+Jimmy Doe;12345-12345-2323-2227;1000000
