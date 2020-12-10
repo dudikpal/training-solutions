@@ -1,0 +1,32 @@
+package ioreader.grades;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class SchoolRecordsManagerTest {
+
+    private SchoolRecordsManager schoolRecordsManager = new SchoolRecordsManager();
+    String pathString = "src/test/java/ioreader/grades/grades.txt";
+
+    @Test
+    public void readFromFiletest() {
+        schoolRecordsManager.readGradesFromFile(pathString);
+
+        assertEquals(4, schoolRecordsManager.getStudents().size());
+        assertEquals(3, schoolRecordsManager.getStudents().get(2).getGradeList().get(1).longValue());
+        assertEquals("Jason_Butler", schoolRecordsManager.getStudents().get(3).getName());
+        assertEquals(4.0, schoolRecordsManager.getStudents().get(2).average(), 0.000001);
+
+    }
+
+
+    @Test
+    public void classAverageTest() {
+        schoolRecordsManager.readGradesFromFile(pathString);
+
+        assertEquals(3.542, schoolRecordsManager.classAverage(), 0.001);
+    }
+
+
+}
