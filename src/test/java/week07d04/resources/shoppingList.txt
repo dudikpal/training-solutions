@@ -1,0 +1,4 @@
+kenyér;2;30
+tej;5;40
+hókifli;30;10
+sütőrum;1;200

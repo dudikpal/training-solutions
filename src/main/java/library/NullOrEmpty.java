@@ -15,5 +15,10 @@ public class NullOrEmpty {
         }
     }
 
+    public static void stringIsNullOrEmpty(String str, String exMessage) {
+        if (str == null || str.isBlank()) {
+            throw new IllegalArgumentException(exMessage);
+        }
+    }
 
 }
