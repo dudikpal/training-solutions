@@ -9,8 +9,8 @@ public class NullOrEmpty {
        }
     }
 
-    public static void listIsEmpty(List<?> list, String exMessage) {
-        if (list.size() == 0) {
+    public static void listIsNullOrEmpty(List list, String exMessage) {
+        if (list == null || list.size() == 0) {
             throw new IllegalArgumentException(exMessage);
         }
     }

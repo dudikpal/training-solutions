@@ -13,7 +13,7 @@ public class Student {
     public Student(String name, List<Integer> gradeList) {
         NullOrEmpty.stringIsNullOrEmpty(name, "Name is null or empty!");
         NullOrEmpty.objectIsNull(gradeList, "List is null!");
-        NullOrEmpty.listIsEmpty(gradeList, "List is empty!");
+        NullOrEmpty.listIsNullOrEmpty(gradeList, "List is empty!");
         this.name = name;
         this.gradeList = gradeList;
     }

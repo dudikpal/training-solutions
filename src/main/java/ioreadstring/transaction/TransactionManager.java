@@ -14,7 +14,7 @@ public class TransactionManager {
 
     public void makeTransactions(String transactionsPath) {
         NullOrEmpty.objectIsNull(getAccountList(), "The List<BankAccount> object is null!");
-        NullOrEmpty.listIsEmpty(accountList, "The list is empty!");
+        NullOrEmpty.listIsNullOrEmpty(accountList, "The list is empty!");
         try {
             List<String> transactions = Files.readAllLines(Path.of(transactionsPath));
             for (String line: transactions) {
