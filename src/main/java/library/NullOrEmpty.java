@@ -1,5 +1,7 @@
 package library;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 
 public class NullOrEmpty {
@@ -17,6 +19,12 @@ public class NullOrEmpty {
 
     public static void stringIsNullOrEmpty(String str, String exMessage) {
         if (str == null || str.isBlank()) {
+            throw new IllegalArgumentException(exMessage);
+        }
+    }
+
+    public static void arrayIsEmpty(Object array, String exMessage) {
+        if (array == null || !array.getClass().isArray() || Array.getLength(array) == 0) {
             throw new IllegalArgumentException(exMessage);
         }
     }
