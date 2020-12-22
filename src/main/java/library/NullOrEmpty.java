@@ -29,4 +29,10 @@ public class NullOrEmpty {
         }
     }
 
+    public static void numberIsNegative(Object number, String exMessage) {
+        if (Double.parseDouble(number.toString()) < 0) {
+            throw new IllegalArgumentException("The number must be positive!");
+        }
+    }
+
 }
