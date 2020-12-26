@@ -18,11 +18,4 @@ public class Draw {
         }
         return winningNumbers;
     }
-
-    public static void main(String[] args) {
-        System.out.println(Draw.drawNumbers(5, 90));
-
-    }
-
-
 }
