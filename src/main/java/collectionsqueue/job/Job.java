@@ -1,6 +1,5 @@
 package collectionsqueue.job;
 
-import collectionsqueue.collectionspriorityqueue.JobDispatcher;
 
 public class Job implements Comparable<Job>{
 
@@ -29,18 +28,6 @@ public class Job implements Comparable<Job>{
 
     public boolean isUrgent() {
         return urgent;
-    }
-
-    public static void main(String[] args) {
-        JobDispatcher jdp = new JobDispatcher();
-        Job[] jobs = {new Job(2, "job1"), new Job(7, "job2"), new Job(5, "job3")};;
-        jdp.addJob(jobs);
-        Job job = null;
-        while (jdp.getJobsQueue().size() > 0){
-            job = jdp.getJobsQueue().poll();
-            System.out.println(job);
-        }
-
     }
 
     @Override
