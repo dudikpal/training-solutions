@@ -8,12 +8,15 @@ import java.util.Arrays;
 
 public class Travel {
 
+    public static final int NUMBER_OF_STOPS = 30;
+    public static final String LINE_SEPARATOR = " ";
+
     public int getStopWithMax(InputStream is) {
-        int[] counter = new int[30];
+        int[] counter = new int[NUMBER_OF_STOPS];
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))){
             String line;
             while ((line = reader.readLine()) != null) {
-                counter[Integer.parseInt(line.split(" ")[0])]++;
+                counter[Integer.parseInt(line.split(LINE_SEPARATOR)[0])]++;
             }
         } catch (IOException ioe) {
             throw new IllegalArgumentException("Cannot read file, ", ioe);

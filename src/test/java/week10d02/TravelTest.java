@@ -17,9 +17,6 @@ class TravelTest {
 
         InputStream is = this.getClass().getClassLoader().getResourceAsStream("week10d02/eberletek.txt");
 
-
         assertEquals(0, travel.getStopWithMax(is));
-
     }
-
 }
