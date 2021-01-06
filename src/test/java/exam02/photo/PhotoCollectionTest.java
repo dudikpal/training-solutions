@@ -1,4 +1,3 @@
-/*
 package exam02.photo;
 
 import org.junit.jupiter.api.Test;
@@ -77,4 +76,4 @@ public class PhotoCollectionTest {
         photoCollection.starPhoto("b.jpg", Quality.TWO_STAR);
         assertEquals(3, photoCollection.numberOfStars());
     }
-}*/
+}
