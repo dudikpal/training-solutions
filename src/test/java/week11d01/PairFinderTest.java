@@ -12,7 +12,7 @@ class PairFinderTest {
 
         int[] arr = {7, 1, 5, 7, 3, 3, 5, 7, 6, 7};
 
-        assertEquals(3, pairFinder.findPairs(arr));
+        assertEquals(4, pairFinder.findPairs(arr));
     }
 
 }
