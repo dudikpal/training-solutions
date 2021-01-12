@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -46,6 +47,6 @@ class CourierTest {
 
         courier.fileReading(is);
 
-        assertEquals(12, courier.distanceOfDays());
+        assertEquals("[65, 0, 69, 62, 74, 0, 75]", Arrays.toString(courier.distanceOfDays()));
     }
 }
