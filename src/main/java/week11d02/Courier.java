@@ -48,7 +48,7 @@ public class Courier {
             Ride ride = value.next();
 
             if (holidays.contains(ride.getDay())) {
-                holidays.remove(new Integer(ride.getDay()));
+                holidays.remove((Integer)(ride.getDay()));
             }
         }
         return holidays;
