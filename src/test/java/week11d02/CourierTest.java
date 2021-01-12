@@ -36,7 +36,7 @@ class CourierTest {
 
         courier.fileReading(is);
 
-        assertEquals(3, courier.holidays().size());
+        assertEquals(2, courier.holidays().size());
     }
 
     @Test
