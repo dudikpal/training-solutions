@@ -36,14 +36,7 @@ public class Courier {
     public List<Integer> holidays() {
 
         Iterator<Ride> value = rides.iterator();
-        List<Integer> holidays = new ArrayList<>();
-        holidays.add(1);
-        holidays.add(2);
-        holidays.add(3);
-        holidays.add(4);
-        holidays.add(5);
-        holidays.add(6);
-        holidays.add(7);
+        List<Integer> holidays = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7));
         while (value.hasNext()) {
             Ride ride = value.next();
 
