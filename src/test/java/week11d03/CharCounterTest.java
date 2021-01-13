@@ -10,7 +10,7 @@ class CharCounterTest {
     void countChars() {
         CharCounter charCounter = new CharCounter();
 
-        String[] arr = {"abc", "cba", "acb", "dcbsga"};
+        String[] arr = {"abc", "cba", "acb", "dcbsgaa"};
 
         assertEquals(3, charCounter.countChars(arr));
     }

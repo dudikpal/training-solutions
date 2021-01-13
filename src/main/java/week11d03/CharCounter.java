@@ -21,7 +21,7 @@ public class CharCounter {
         }
         int counter = 0;
         for (int number: charCounter.values()) {
-            if (number == chars.length) {
+            if (number >= chars.length) {
                 counter++;
             }
         }
