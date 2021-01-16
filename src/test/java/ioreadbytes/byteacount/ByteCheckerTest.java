@@ -12,6 +12,6 @@ public class ByteCheckerTest {
     @Test
     public void readBytesAndFindAsTest() {
         // data.dat hiányában írtam egyet, ezért az expected 129-et átírtam
-        assertEquals(10, byteChecker.readBytesAndFindAs("src/main/resources/ioreadbytes/byteacount/data.dat"));
+        assertEquals(240, byteChecker.readBytesAndFindAs("src/main/resources/ioreadbytes/byteacount/data.dat"));
     }
 }

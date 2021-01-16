@@ -1,3 +1,11 @@
 .idea
 *.iml
 target
+/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+/.gradle/buildOutputCleanup/cache.properties
+/.gradle/checksums/checksums.lock
+/.gradle/6.5/executionHistory/executionHistory.lock
+/.gradle/6.5/fileHashes/fileHashes.lock
+/.gradle/6.5/gc.properties
+/.gradle/vcs-1/gc.properties
+/.gradle/6.5/fileChanges/last-build.bin

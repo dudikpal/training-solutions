@@ -13,10 +13,12 @@ public class ByteChecker {
 
     public static void main(String[] args) {
         ByteChecker bc = new ByteChecker();
-        bc.readBytesAndFindAs("src/main/resources/ioreadbytes/byteacount/data.dat");
+        //bc.readBytesAndFindAs("src/main/resources/ioreadbytes/byteacount/data.dat");
+        bc.bytesWriter(Path.of("src/main/resources/ioreadbytes/byteacount/data.dat"));
     }
 
     public int readBytesAndFindAs(String fileName) {
+
         Path path = Path.of(fileName);
         bytesWriter(path);
         try (InputStream is = new BufferedInputStream(Files.newInputStream(path))){
@@ -37,7 +39,30 @@ public class ByteChecker {
 
     private void bytesWriter(Path path) {
         try {
-           byte[] bytes = "ahldfigauefbevauhertfhbvfaudfbdbanboaboubaoubaoubaa".getBytes();
+           byte[] bytes = ("ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba" +
+                   "ahldfigauefbevauhertfhbvfaudabdbanboaboubaoubaouba").getBytes();
            Files.write(path, bytes);
         } catch (IOException ex) {
             throw new IllegalStateException("Cant write file");
