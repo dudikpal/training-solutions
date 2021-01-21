@@ -1,4 +1,3 @@
-/*
 package lambdaoptional;
 
 import org.junit.jupiter.api.Test;
@@ -31,11 +30,11 @@ public class SocialNetworkTest {
         assertFalse(socialNetwork.findFirst(m -> m.getName().equals("Joe")).isPresent());
 
         assertTrue(socialNetwork.findFirst(m -> m.getName().equals("John Doe")).isPresent());
+
         assertEquals("John Doe", socialNetwork.findFirst(m -> m.getName().equals("John Doe")).get().getName());
     }
 
-    */
-/*@Test
+    @Test
     public void testAvg() {
         assertEquals(false, new SocialNetwork(Collections.emptyList()).averageNumberOfSkills().isPresent());
 
@@ -48,6 +47,6 @@ public class SocialNetworkTest {
 
 
         assertEquals(2.25, socialNetwork.averageNumberOfSkills().get());
-    }*//*
+    }
 
-}*/
+}
