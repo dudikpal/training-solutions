@@ -29,6 +29,6 @@ public class Employee {
     }
 
     public List<String> getSkills() {
-        return skills;
+        return new ArrayList<>(skills);
     }
 }
