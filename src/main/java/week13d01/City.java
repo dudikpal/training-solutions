@@ -1,8 +1,11 @@
 package week13d01;
 
+import java.text.Collator;
 import java.util.Comparator;
+import java.util.Locale;
+import java.util.stream.Collector;
 
-public class City implements Comparator<City> {
+public class City{
 
     private String Irsz;
     private String name;
@@ -14,10 +17,7 @@ public class City implements Comparator<City> {
         this.subName = subName;
     }
 
-    @Override
-    public int compare(City o1, City o2) {
-        return o1.getName().compareTo(o2.getName());
-    }
+
 
     public String getIrsz() {
         return Irsz;

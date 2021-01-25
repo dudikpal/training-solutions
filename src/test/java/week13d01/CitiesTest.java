@@ -15,7 +15,7 @@ class CitiesTest {
 
         Cities cities = new Cities();
 
-        assertEquals("8127", cities.firstCity(file).getIrsz());
         assertEquals("Aba", cities.firstCity(file).getName());
+        assertEquals("8127", cities.firstCity(file).getIrsz());
     }
 }
