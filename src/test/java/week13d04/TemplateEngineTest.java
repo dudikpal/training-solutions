@@ -33,9 +33,9 @@ class TemplateEngineTest {
                          "Üdvözlettel,\n" +
                          "Ügyfélszolgálat";
     
-    InputStream is = this.getClass().getResourceAsStream("template.txt");
+    
     StringReader sr = new StringReader(template);
-    BufferedReader br = new BufferedReader(new InputStreamReader(is));
+    BufferedReader br = new BufferedReader(sr);
     StringWriter sw = new StringWriter();
     BufferedWriter bw = new BufferedWriter(sw);
     
