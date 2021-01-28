@@ -32,8 +32,7 @@ class TemplateEngineTest {
                          "A fizetési határidő {hatarido}.\n" +
                          "Üdvözlettel,\n" +
                          "Ügyfélszolgálat";
-    
-    
+        
     StringReader sr = new StringReader(template);
     BufferedReader br = new BufferedReader(sr);
     StringWriter sw = new StringWriter();

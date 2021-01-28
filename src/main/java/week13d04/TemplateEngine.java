@@ -51,6 +51,5 @@ public class TemplateEngine {
     } catch (IOException ioe) {
       ioe.printStackTrace();
     }
-    
   }
 }
