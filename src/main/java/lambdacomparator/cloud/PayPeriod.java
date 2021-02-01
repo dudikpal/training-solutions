@@ -5,13 +5,13 @@ public enum PayPeriod {
     ANNUAL(12),
     LIFETIME(60);
 
-    private int lenght;
+    private int length;
 
-    PayPeriod(int lenght) {
-        this.lenght = lenght;
+    PayPeriod(int length) {
+        this.length = length;
     }
 
-    public int getLenght() {
-        return lenght;
+    public int getLength() {
+        return length;
     }
 }

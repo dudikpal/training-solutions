@@ -1,7 +1,5 @@
 package staticattrmeth.bank;
 
-import classstructureconstructors.Bank;
-
 import java.math.BigDecimal;
 
 public class BankTransaction {
