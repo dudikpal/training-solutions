@@ -1,6 +1,8 @@
 .idea
 *.iml
+*.class
 target
+.gitignore
 /.gradle/buildOutputCleanup/buildOutputCleanup.lock
 /.gradle/buildOutputCleanup/cache.properties
 /.gradle/checksums/checksums.lock
