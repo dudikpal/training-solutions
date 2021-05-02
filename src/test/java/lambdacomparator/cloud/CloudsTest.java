@@ -50,7 +50,7 @@ public class CloudsTest {
         assertEquals("iDrive", cloudStorage.getProvider());
     }
 
-    /*@Test
+    @Test
     public void testBestPriceForShortestPeriodWithoutFree() {
         Clouds clouds = new Clouds();
 
@@ -102,5 +102,5 @@ public class CloudsTest {
         assertEquals(List.of(2000), worstStorages.stream().map(CloudStorage::getSpace).collect(Collectors.toList()));
         assertEquals(List.of(PayPeriod.ANNUAL), worstStorages.stream().map(CloudStorage::getPeriod).collect(Collectors.toList()));
         assertEquals(List.of(52.12), worstStorages.stream().map(CloudStorage::getPrice).collect(Collectors.toList()));
-    }*/
+    }
 }

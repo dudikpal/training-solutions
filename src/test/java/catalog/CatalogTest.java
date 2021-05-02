@@ -41,7 +41,6 @@ public class CatalogTest {
         assertEquals(1, catalog.catalogItems.size());
         catalog.deleteItemByRegistrationNumber("R-1");
         assertEquals(0, catalog.catalogItems.size());
-
     }
 
     @Test

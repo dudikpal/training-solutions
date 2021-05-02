@@ -31,14 +31,20 @@ public class SportGadgetStore {
     public String getExpensiveProductStatistics(double minPrice) {
         int productTypes = 0;
         String template = "Összesen %s féle termék, amelyekből minimum %s db, maximum %s db, összesen %s db van.";
-        List<Integer> stat = products.stream()
+        /*List<Integer> stat = products.stream()
                 .filter(product -> product.getPrice() > minPrice)
                 .map(product -> product.getPcs())
                 .collect(Collectors.toList());
-
         IntSummaryStatistics iss = stat.stream().mapToInt(x -> x).summaryStatistics();
-
         if (stat.isEmpty()) {
+            return "Nincs ilyen termék.";
+        }*/
+        IntSummaryStatistics iss = products.stream()
+                .filter(product -> product.getPrice() > minPrice)
+                .mapToInt(product -> product.getPcs())
+                .summaryStatistics();
+
+        if (iss.getCount() == 0) {
             return "Nincs ilyen termék.";
         }
         return String.format(template, iss.getCount(), iss.getMin(), iss.getMax(), iss.getSum());
